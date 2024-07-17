@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Library</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <h1>Library</h1>
+    </header>
+    <main>
+      <div class="cards">
+        <div class="card">
+          <div class="content">
+            <label for="title"
+              >Title
+              <h2 class="title">GAME OF THRONES</h2></label
+            >
+            <label for="author"
+              >Author
+              <p class="author">UNKNOWN</p></label
+            >
+            <label for="pages"
+              >Pages
+              <p class="pages">700</p></label
+            >
+          </div>
+          <div class="btn">
+            <button class="read">COMPLETED</button>
+            <button class="Edit">Edit</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="content">
+            <label for="title"
+              >Title
+              <h2 class="title">GAME OF THRONES</h2></label
+            >
+            <label for="author"
+              >Author
+              <p class="author">UNKNOWN</p></label
+            >
+            <label for="pages"
+              >Pages
+              <p class="pages">700</p></label
+            >
+          </div>
+          <div class="btn">
+            <button class="read">COMPLETED</button>
+            <button class="Edit">Edit</button>
+          </div>
+        </div>
+        </div>
+      </div>
+      <button type="button" class="add">+</button>
+    </main>
+    <dialog>
+      <button class="close" autofocus>Close</button>
+        <form action="" method="dialog">
+          <fieldset class="book-details">
+            <legend>Enter Book Details</legend>
+          <label for="title">Title<input type="text" id="title" name="title" placeholder="Enter title of the book" required></label>
+          <label for="author">Author<input type="text" id="author" name="author" placeholder="Enter author of the book" required></label>
+          <label for="pages">Pages<input type="number" id="pages" name="pages" placeholder="Enter pages " required></label>
+        </fieldset>
+        <fieldset class="read-status">
+          <legend>Select One</legend>
+          <input type="radio" name="ReadStatus" id="Planning-to-read" value="Planning-to-read"><label for="Planning-to-read" > Planning To Read</label><br>
+          <input type="radio" name="ReadStatus" id="Reading" value="Reading" checked><label for="Reading"> Reading</label><br>
+          <input type="radio" name="ReadStatus" id="Completed" value="Completed"><label for="Completed" > Completed</label>
+        </fieldset>
+        <button class="submit" type="submit">OK</button>
+        </form>
+    </dialog>
+    <footer>
+      <h2>Created by Latif</h2>
+    </footer>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

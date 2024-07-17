@@ -1,0 +1,182 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    display: grid;
+    align-items: center;
+    text-align: start;
+    padding-left: 20px;
+    background: rgb(255, 177, 21);
+    height: 150px;
+}
+
+.cards {
+    padding: 2.5rem 2rem;
+
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: burlywood;
+}
+
+.card {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    padding: 20px;
+    background-color: grey;
+    border-radius: 20px;
+    gap: 15px;
+
+
+}
+
+.content {
+    height: 80%;
+}
+
+.card button {
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn {
+    display: flex;
+    gap: 10px;
+    bottom: 5%;
+}
+
+.btn button {
+    background-color: rgb(120, 120, 255);
+    color: white;
+}
+
+.btn button:hover {
+    background-color: rgb(91, 91, 255);
+}
+
+.add {
+    position: fixed;
+    height: 5rem;
+    width: 5rem;
+    bottom: 50px;
+    right: 50px;
+    font-size: 4rem;
+    border: none;
+    border-radius: 20px;
+
+}
+
+.add:hover {
+    background-color: #e9e9e9;
+}
+
+footer {
+    background: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+}
+
+dialog {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50vh;
+    width: 40vh;
+    padding: 20px 0;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 30, 30, 0.595);
+}
+
+dialog::-webkit-scrollbar {
+    display: none;
+}
+
+dialog .book-details input {
+    margin-bottom: 10px;
+    width: 90%;
+}
+
+dialog form {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+fieldset {
+    margin: 20px 0;
+}
+
+form input {
+
+    font-size: 1.2rem;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+}
+
+dialog .close {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.close:hover {
+    background-color: #ffffff29;
+}
+
+@media(max-width:375px) {
+    .cards {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1;
+        min-height: 200px;
+
+    }
+
+    .content {
+        font-size: 1.1rem;
+    }
+
+    header {
+        height: 100px;
+    }
+
+    footer {
+        height: 100px;
+    }
+
+    .add {
+        height: 4rem;
+        width: 4rem;
+        font-size: 2rem;
+    }
+}
