@@ -12,54 +12,13 @@
     </header>
     <main>
       <div class="cards">
-        <div class="card">
-          <div class="content">
-            <label for="title"
-              >Title
-              <h2 class="title">GAME OF THRONES</h2></label
-            >
-            <label for="author"
-              >Author
-              <p class="author">UNKNOWN</p></label
-            >
-            <label for="pages"
-              >Pages
-              <p class="pages">700</p></label
-            >
-          </div>
-          <div class="btn">
-            <button class="read">COMPLETED</button>
-            <button class="Edit">Edit</button>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="content">
-            <label for="title"
-              >Title
-              <h2 class="title">GAME OF THRONES</h2></label
-            >
-            <label for="author"
-              >Author
-              <p class="author">UNKNOWN</p></label
-            >
-            <label for="pages"
-              >Pages
-              <p class="pages">700</p></label
-            >
-          </div>
-          <div class="btn">
-            <button class="read">COMPLETED</button>
-            <button class="Edit">Edit</button>
-          </div>
-        </div>
         </div>
       </div>
       <button type="button" class="add">+</button>
     </main>
     <dialog>
-      <button class="close" autofocus>Close</button>
-        <form action="" method="dialog">
+      <button class="close">Close</button>
+        <form class="form" action="#" method="dialog">
           <fieldset class="book-details">
             <legend>Enter Book Details</legend>
           <label for="title">Title<input type="text" id="title" name="title" placeholder="Enter title of the book" required></label>
@@ -68,11 +27,11 @@
         </fieldset>
         <fieldset class="read-status">
           <legend>Select One</legend>
-          <input type="radio" name="ReadStatus" id="Planning-to-read" value="Planning-to-read"><label for="Planning-to-read" > Planning To Read</label><br>
-          <input type="radio" name="ReadStatus" id="Reading" value="Reading" checked><label for="Reading"> Reading</label><br>
-          <input type="radio" name="ReadStatus" id="Completed" value="Completed"><label for="Completed" > Completed</label>
+          <input type="radio" name="ReadStatus" id="Planning-to-read" value="PLANNING TO READ"><label for="Planning-to-read" > PLANNING TO READ</label><br>
+          <input type="radio" name="ReadStatus" id="Reading" value="READING" checked><label for="Reading"> READING</label><br>
+          <input type="radio" name="ReadStatus" id="Completed" value="COMPLETED"><label for="Completed" > COMPLETED</label>
         </fieldset>
-        <button class="submit" type="submit">OK</button>
+        <button class="submit" type="button">OK</button>
         </form>
     </dialog>
     <footer>
