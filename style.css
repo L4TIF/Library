@@ -9,6 +9,7 @@ body {
     scroll-behavior: smooth;
     height: 100%;
     width: 100%;
+    font-family: Helvetica, sans-serif;
 }
 
 header {
@@ -16,62 +17,70 @@ header {
     align-items: center;
     text-align: start;
     padding-left: 20px;
-    background: rgb(255, 177, 21);
     height: 100px;
+    background-color: #2E4057;
+    color: white;
+    box-shadow: 0 0 20px 0px rgb(154, 154, 154);
+
 }
 
 main {
-    background-color: burlywood;
+    /* background-color: #D8D0C1; */
+    min-height: 100vh;
 }
 
 .cards {
     padding: 2.5rem 2rem;
     gap: 1rem;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
 
 }
 
 .card {
-    height: 250px;
     display: flex;
     flex-direction: column;
     font-size: 1.2rem;
     padding: 20px;
-    background-color: grey;
+    background-color: #CFDBD5;
     border-radius: 20px;
     gap: 15px;
     position: relative;
-
+    color: #242423;
+    box-shadow: 0 0 4px 0px rgb(154 154 154 / 14%);
 }
 
-.content {
-    height: 80%;
-}
+.content {}
 
 .card button {
-    font-size: 60%;
     padding: 10px;
     border: none;
     border-radius: 10px;
 
-   
+
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 6px 3px rgb(154 154 154 / 31%);
 }
 
 .btn {
-    width: 80%;
+    font-size: rem;
     display: flex;
     gap: 10px;
-    bottom: 5%;
-    position: absolute;
     height: 20%;
+    justify-content: end;
+
 }
 
 .btn button {
     background-color: rgb(120, 120, 255);
     color: white;
-  
+    padding: 10px;
+    font-size: 1rem;
+
 }
 
 .btn button:hover {
@@ -95,13 +104,15 @@ main {
 }
 
 footer {
-    background: purple;
+    background-color: #2E4057;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100px;
     margin-top: auto;
+    box-shadow: 0 0 20px 0px rgb(154, 154, 154);
 }
 
 dialog {
@@ -113,7 +124,8 @@ dialog {
     padding: 20px 0;
     border: none;
     border-radius: 20px;
-    background-color: rgba(255, 30, 30, 0.595);
+    background-color:#E8EDDF
+    box-shadow: 0 0 20px 0px rgb(154, 154, 154);
 }
 
 dialog::-webkit-scrollbar {
@@ -132,13 +144,13 @@ dialog form {
 
 fieldset {
     margin: 20px 0;
+    border: none;
 }
 
 form input {
-
+   border: none;
     font-size: 1.2rem;
 }
-
 form button {
     margin-top: 15px;
     padding: 10px 30px;
@@ -160,7 +172,7 @@ dialog .close {
     background-color: #ffffff29;
 }
 
-@media(max-width:375px) {
+@media(max-width:425px) {
     .cards {
         display: flex;
         flex-direction: column;
@@ -172,12 +184,8 @@ dialog .close {
 
     }
 
-    main {
-        height: 80vh;
-    }
-
     .content {
-        font-size: 1.1rem;
+        font-size: 1.8rem;
     }
 
     header {
@@ -193,7 +201,15 @@ dialog .close {
         width: 4rem;
         font-size: 2rem;
     }
-    dialog{
+
+    dialog {
         height: 55vh;
+    }
+}
+
+@media(max-width:1024px) {
+    .cards {
+
+        grid-template-columns: repeat(4, 1fr);
     }
 }

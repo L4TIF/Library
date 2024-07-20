@@ -23,9 +23,6 @@ function addBookToLibrary() {
 }
 addBookToLibrary();  //calling it first time so there will be one card by default.
 
-
-
-
 function traverseLibrary() {
     document.querySelector(".cards").innerHTML = "";
     for (const iterator of myLibrary) {
