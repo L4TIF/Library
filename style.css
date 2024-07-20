@@ -124,7 +124,7 @@ dialog {
     padding: 20px 0;
     border: none;
     border-radius: 20px;
-    background-color:#E8EDDF
+    background-color:#E8EDDF;
     box-shadow: 0 0 20px 0px rgb(154, 154, 154);
 }
 
@@ -172,7 +172,7 @@ dialog .close {
     background-color: #ffffff29;
 }
 
-@media(max-width:425px) {
+@media(max-width:500px) {
     .cards {
         display: flex;
         flex-direction: column;

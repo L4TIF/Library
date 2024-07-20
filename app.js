@@ -88,3 +88,8 @@ submitBtn.addEventListener("click", () => {
 
 })
 
+// toggle read status
+const readStatusBtn = document.querySelector(".read");
+readStatusBtn.addEventListener("click",()=>{
+   console.log(readStatusBtn)
+})
