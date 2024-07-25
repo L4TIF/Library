@@ -18,8 +18,8 @@ function book(title, author, pages, read) {
 }
 
 //calling it first time so there will be one card by default.
-let newBook = new book("Game Of Thrones", "Unknown", "500", "COMPLETED");
-myLibrary.push(newBook)
+ 
+myLibrary.push(new book("Game Of Thrones", "Unknown", "500", "COMPLETED"));
 traverseLibrary(myLibrary);
 
 
