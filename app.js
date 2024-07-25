@@ -2,10 +2,11 @@ const addBtn = document.querySelector(".add");
 const dialog = document.querySelector("dialog");
 const closeDialog = document.querySelector(".close")
 const submitBtn = document.querySelector(".submit");
-let title = "Game Of Thrones";
-let author = "Unknown";
-let pages = "500";
-let read = "Completed";
+
+let title;
+let author;
+let pages;
+let read;
 // array of books
 const myLibrary = [];
 
@@ -16,19 +17,24 @@ function book(title, author, pages, read) {
     this.read = read;
 }
 
+//calling it first time so there will be one card by default.
+let newBook = new book("Game Of Thrones", "Unknown", "500", "COMPLETED");
+myLibrary.push(newBook)
+traverseLibrary(myLibrary);
+
+
 function addBookToLibrary() {
     let newBook = new book(title, author, pages, read);
     myLibrary.push(newBook)
-    traverseLibrary();
 }
-addBookToLibrary();  //calling it first time so there will be one card by default.
 
 function traverseLibrary() {
     document.querySelector(".cards").innerHTML = "";
     for (const iterator of myLibrary) {
-        console.log(iterator)
         createCard(iterator)
     }
+    handleDelete();
+    handleToggle();
 }
 
 // creating card
@@ -38,13 +44,15 @@ function createCard(iterator) {
           <label for="title">Title<h2 class="title">${iterator.title}</h2></label>
           <label for="author">Author<p class="author">${iterator.author}</p></label>
           <label for="pages">Pages<p class="pages">${iterator.pages}</p></label>
-          <div class="btn"><button class="read">${iterator.read}</button>  <button class="Edit">Edit</button></div>
+          <div class="btn"><button class="read">${iterator.read}</button>  <button class="Delete">DELETE</button></div>
     </div>`;
     console.log(myLibrary)
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = cardHtml;
     document.querySelector(".cards").appendChild(card);
+    // adding index to card to identify and delete
+    card.setAttribute("data-index", myLibrary.indexOf(iterator));
 
 }
 
@@ -73,23 +81,53 @@ closeDialog.addEventListener("click", () => {
     resetForm();
 })
 
-submitBtn.addEventListener("click", () => {
+submitBtn.addEventListener("click", (e) => {
     title = document.querySelector("#title").value;
     author = document.querySelector("#author").value;
     pages = document.querySelector("#pages").value;
     read = getReadStatus();
     if ((title && author && pages)) {
         addBookToLibrary();
+        traverseLibrary(myLibrary);
         resetForm();
         dialog.close();
+        e.preventDefault();
     }
     else
         window.alert("Enter all fields")
 
 })
 
-// toggle read status
-const readStatusBtn = document.querySelector(".read");
-readStatusBtn.addEventListener("click",()=>{
-   console.log(readStatusBtn)
-})
+function handleToggle() {
+    // adding Event listener to buttons
+    let readStatusBtn = document.querySelectorAll(".read");
+
+    // toggle read status
+    readStatusBtn.forEach(element => {
+        element.addEventListener("click", (e) => {
+            let index = e.target.parentNode.parentNode.parentNode.getAttribute("data-index");
+
+            myLibrary[index].read === "COMPLETED" ?
+                myLibrary[index].read = "READING" :
+                myLibrary[index].read = "COMPLETED";
+            traverseLibrary(myLibrary)
+        })
+    });
+
+}
+
+// handles book deletion
+function handleDelete() {
+    let deleteBtn = document.querySelectorAll(".Delete");
+    deleteBtn.forEach(element => {
+        element.addEventListener('click', (e) => {
+
+            let index = e.target.parentNode.parentNode.parentNode.getAttribute("data-index");
+            myLibrary.splice(index,1)
+            // re-render book cards after deletion
+            traverseLibrary(myLibrary);
+        });
+    });
+
+}
+

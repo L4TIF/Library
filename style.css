@@ -34,24 +34,27 @@ main {
     gap: 1rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(auto, 1fr);
-
+    align-items: center;
 }
 
 .card {
+    background-color: #CFDBD5;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 0px rgb(154 154 154 / 14%);
+    padding: 20px;
+    max-width: 300px;
+}
+
+.content {
     display: flex;
     flex-direction: column;
     font-size: 1.2rem;
-    padding: 20px;
-    background-color: #CFDBD5;
-    border-radius: 20px;
-    gap: 15px;
-    position: relative;
     color: #242423;
-    box-shadow: 0 0 4px 0px rgb(154 154 154 / 14%);
+    gap: 15px;
+    justify-content: space-between;
+    height: 100%;
+    overflow: hidden;
 }
-
-.content {}
 
 .card button {
     padding: 10px;
@@ -70,9 +73,7 @@ main {
     font-size: rem;
     display: flex;
     gap: 10px;
-    height: 20%;
     justify-content: end;
-
 }
 
 .btn button {
